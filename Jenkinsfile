@@ -17,22 +17,6 @@ pipeline {
         sh 'kitchen converge'
       }
     }
-    stage('Kitchen: Verify') {
-      steps {
-        echo '######################'
-        echo 'Running Kitchen Verify'
-        echo '######################'
-        sh 'kitchen verify'
-      }
-    }
-    stage('Kitchen: Destroy') {
-      steps {
-        echo '######################'
-        echo 'Running Kitchen Destroy'
-        echo '######################'
-        sh 'kitchen destroy'
-      }
-    }
   }
   post {
     failure {
