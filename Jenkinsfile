@@ -6,7 +6,7 @@ pipeline {
         echo '######################'
         echo 'Running Kitchen Create'
         echo '######################'
-        sh 'kitchen create'
+        sh 'bundle exec kitchen create'
       }
     }
     stage('Kitchen: Converge') {
@@ -14,7 +14,7 @@ pipeline {
         echo '######################'
         echo 'Running Kitchen Converge'
         echo '######################'
-        sh 'kitchen converge'
+        sh 'bundle exec kitchen converge'
       }
     }
     stage('Kitchen: Verify') {
@@ -24,7 +24,7 @@ pipeline {
         echo "######################"
         sh 'sleep 300'
         sh 'terraform output --json > test/integration/default/files/terraform.json'
-        sh 'inspec exec --log-level=debug test/integration/default'
+        sh 'bundle exec inspec exec --log-level=debug test/integration/default'
       }
     }
     stage('Kitchen: Destroy') {
@@ -32,13 +32,13 @@ pipeline {
         echo "######################"
         echo "Running Kitchen Destroy"
         echo "######################"
-        sh 'kitchen destroy'
+        sh 'bundle exec kitchen destroy'
       }
     }
   }
   post {
     failure {
-      sh 'kitchen destroy'
+      sh 'bundle exec kitchen destroy'
     }
   }
 }

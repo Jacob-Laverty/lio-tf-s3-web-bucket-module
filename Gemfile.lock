@@ -56,6 +56,7 @@ GEM
     faraday-cookie_jar (0.0.6)
       faraday (>= 0.7.4)
       http-cookie (~> 1.0.0)
+    ffi (1.9.23)
     ffi (1.9.23-x64-mingw32)
     gssapi (1.2.0)
       ffi (>= 1.0.1)
@@ -109,6 +110,7 @@ GEM
       mixlib-versioning
       thor
     mixlib-log (2.0.3)
+    mixlib-shellout (2.3.2)
     mixlib-shellout (2.3.2-universal-mingw32)
       win32-process (~> 0.8.2)
       wmi-lite (~> 1.0)
@@ -182,6 +184,7 @@ GEM
       winrm-fs (~> 1.0)
     unf (0.1.4)
       unf_ext
+    unf_ext (0.0.7.5)
     unf_ext (0.0.7.5-x64-mingw32)
     win32-process (0.8.3)
       ffi (>= 1.0.0)
@@ -205,6 +208,7 @@ GEM
     wmi-lite (1.0.0)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
