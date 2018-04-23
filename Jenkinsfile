@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Kitchen: Create')  {
+    stage('Kitchen: Create') {
       steps {
         echo '######################'
         echo 'Running Kitchen Create'
@@ -19,9 +19,9 @@ pipeline {
     }
     stage('Kitchen: Verify') {
       steps {
-        echo "######################"
-        echo "Running Kitchen Verify"
-        echo "######################"
+        echo '######################'
+        echo 'Running Kitchen Verify'
+        echo '######################'
         sh 'sleep 300'
         sh 'terraform output --json > test/integration/default/files/terraform.json'
         sh 'inspec exec --log-level=debug test/integration/default'
@@ -29,9 +29,9 @@ pipeline {
     }
     stage('Kitchen: Destroy') {
       steps {
-        echo "######################"
-        echo "Running Kitchen Destroy"
-        echo "######################"
+        echo '######################'
+        echo 'Running Kitchen Destroy'
+        echo '######################'
         sh 'kitchen destroy'
       }
     }
@@ -39,6 +39,8 @@ pipeline {
   post {
     failure {
       sh 'kitchen destroy'
+
     }
+
   }
 }
