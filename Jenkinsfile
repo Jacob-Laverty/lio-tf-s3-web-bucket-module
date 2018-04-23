@@ -6,6 +6,7 @@ pipeline {
         echo '######################'
         echo 'Running Kitchen Create'
         echo '######################'
+        sh 'whoami'
         sh 'kitchen create'
       }
     }
