@@ -7,6 +7,8 @@ pipeline {
         echo 'Running Kitchen Create'
         echo '######################'
         sh 'whoami'
+        sh 'rbenv global'
+        sh 'ruby -v'
         sh 'kitchen create'
       }
     }
