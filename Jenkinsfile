@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Kitchen: Create')  {
+    stage('Kitchen: Create') {
       steps {
         echo '######################'
         echo 'Running Kitchen Create'
@@ -19,9 +19,9 @@ pipeline {
     }
     stage('Kitchen: Verify') {
       steps {
-        echo "######################"
-        echo "Running Kitchen Verify"
-        echo "######################"
+        echo '######################'
+        echo 'Running Kitchen Verify'
+        echo '######################'
         sh 'sleep 300'
         sh 'terraform output --json > test/integration/default/files/terraform.json'
         sh 'bundle exec inspec exec --log-level=debug test/integration/default'
